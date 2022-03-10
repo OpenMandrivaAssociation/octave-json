@@ -1,0 +1,30 @@
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -2,20 +2,20 @@
+ OCTS = $(SRCS:.cc=.oct)
+ HEADS = octave7.h
+ 
+-RAPID_JSON_URL = https://github.com/Tencent/rapidjson/archive/master.tar.gz
+-RAPID_JSON_TAR = master.tar.gz
++#RAPID_JSON_URL = https://github.com/Tencent/rapidjson/archive/master.tar.gz
++#RAPID_JSON_TAR = master.tar.gz
+ 
+-MKOCTFILE ?= mkoctfile
++#MKOCTFILE ?= mkoctfile
+ 
+ CURL_OPTS = --fail --location --silent --show-error --output
+ 
+ all: $(OCTS)
+ 
+-%.oct: %.cc $(HEADS) rapidjson
+-	$(MKOCTFILE) -Irapidjson/include $< -o $@
++%.oct: %.cc $(HEADS)
++	$(MKOCTFILE) -Irapidjson/include $< -o $@
+ 
+-$(RAPID_JSON_TAR):
+-	curl $(CURL_OPTS) $(RAPID_JSON_TAR) $(RAPID_JSON_URL)
++#$(RAPID_JSON_TAR):
++#	curl $(CURL_OPTS) $(RAPID_JSON_TAR) $(RAPID_JSON_URL)
+ 
+ rapidjson: $(RAPID_JSON_TAR)
+ 	tar -xf $(RAPID_JSON_TAR)
