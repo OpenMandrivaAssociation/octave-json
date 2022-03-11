@@ -43,9 +43,9 @@ mv rapidjson-%{rapidjson_commit} src/rapidjson
 
 # remove backup files
 find . -name \*~ -delete
-#exit 1
+
 %build
-CXXFLAGS="%{optflags} -std=c++11"
+export CXXFLAGS="%{optflags} -std=c++11"
 %set_build_flags
 %octave_pkg_build
 
