@@ -1,5 +1,8 @@
 %global octpkg json
 
+# (mandian)
+# NOTE this package is obsolete because this code is now merged in octave >=7
+
 # FIXME: it's like rapidjson upstreamer has not release a new
 #        version since 2015 so packaged version is too old
 %global rapidjson_commit 8261c1ddf43f10de00fd8c9a67811d1486b2c784
